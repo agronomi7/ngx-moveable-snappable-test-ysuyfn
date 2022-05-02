@@ -1,0 +1,15 @@
+<ngx-guidelines (setGuidelines)="setGuidelines($event)"></ngx-guidelines>
+<div class="target" #target>TARGET</div>
+<ngx-moveable
+  [target]="target"
+  [draggable]="true"
+  [resizable]="true"
+  [snappable]="true"
+  [rotatable]="true"
+  [keepRatio]="true"
+  [horizontalGuidelines]="guidelines"
+  (dragStart)="onDragStart($event)"
+  (resize)="onResize($event)"
+  (rotate)="onRotate($event)"
+  (drag)="onDrag($event)"
+></ngx-moveable>

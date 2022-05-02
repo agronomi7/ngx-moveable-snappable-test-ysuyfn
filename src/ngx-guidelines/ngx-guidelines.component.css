@@ -1,0 +1,67 @@
+.ruler {
+  width: 100%;
+  position: absolute;
+  height: 20px;
+  background: #333;
+  left: 0;
+  top: 0;
+}
+.guidelines {
+  position: absolute;
+  top: 0;
+  left: 0;
+  will-change: transform;
+  z-index: 2000;
+}
+.guidelines.horizontal {
+  width: 100%;
+  height: 0;
+  top: 0px;
+}
+.guidelines.vertical {
+  height: 100%;
+  width: 0;
+  left: 30px;
+}
+.guideline {
+  position: absolute;
+  background: #f33;
+  z-index: 2;
+}
+.guideline.dragging:before {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.guideline.horizontal {
+  width: 100%;
+  height: 1px;
+  cursor: row-resize;
+}
+.guideline.vertical {
+  width: 1px;
+  height: 100%;
+  cursor: col-resize;
+}
+.mobile .guideline.horizontal {
+  transform: scale(1, 2);
+}
+.mobile .guideline.vertical {
+  transform: scale(2, 1);
+}
+.guideline.horizontal:before {
+  height: 20px;
+}
+.guideline.vertical:before {
+  width: 20px;
+}
+.adder {
+  display: none;
+}
+.adder.dragging {
+  display: block;
+}
