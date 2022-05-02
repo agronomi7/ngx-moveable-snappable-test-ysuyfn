@@ -1,7 +1,36 @@
 <ngx-guidelines (setGuidelines)="setGuidelines($event)"></ngx-guidelines>
-<div class="target" #target>TARGET</div>
+<div class="target" #target1>
+  <img
+    src="https://www.imgacademy.com/sites/default/files/styles/scale_1700w/public/2020-04/OG-football-school.jpg?itok=dcNCdqDv"
+    alt=""
+    style="width: 100%; height:100%; object-fit: contain; pointer-events:none"
+  />
+</div>
+<div class="target" #target2>
+  <img
+    src="https://www.imgacademy.com/sites/default/files/styles/scale_1700w/public/2020-04/OG-football-school.jpg?itok=dcNCdqDv"
+    alt=""
+    style="width: 100%; height:100%; object-fit: contain; pointer-events:none"
+  />
+</div>
 <ngx-moveable
   [target]="target"
+  [origin]="false"
+  [draggable]="true"
+  [resizable]="true"
+  [snappable]="true"
+  [rotatable]="true"
+  [keepRatio]="true"
+  [horizontalGuidelines]="guidelines"
+  (dragStart)="onDragStart($event)"
+  (resize)="onResize($event)"
+  (rotate)="onRotate($event)"
+  (drag)="onDrag($event)"
+></ngx-moveable>
+
+<ngx-moveable
+  [target]="target2"
+  [origin]="false"
   [draggable]="true"
   [resizable]="true"
   [snappable]="true"
